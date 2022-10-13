@@ -39,6 +39,7 @@ namespace MovieApp.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpGet("{id}", Name = "EmployeeById")]
         public async Task<IActionResult> GetEmployee(int id)
         {
@@ -86,6 +87,7 @@ namespace MovieApp.Controllers
             }
         }
 
+        [Authorize(UserRole.Admin)]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, EmployeeUpdateRequest request)
         {
@@ -116,6 +118,7 @@ namespace MovieApp.Controllers
             }
         }
 
+        [Authorize(UserRole.Admin)]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(int id)
         {

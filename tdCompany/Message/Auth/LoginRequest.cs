@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MovieApp.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieApp.Message.Auth
 {
@@ -9,4 +10,6 @@ namespace MovieApp.Message.Auth
         [Required]
         public string Password { get; set; }
     }
+
+   
 }

@@ -15,6 +15,7 @@ namespace MovieApp.Controllers
             _companyRepo = companyRepo;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetCompanies()
         {
@@ -36,7 +37,7 @@ namespace MovieApp.Controllers
             }
         }
 
-
+        [AllowAnonymous]
         [HttpGet("{id}", Name = "CompanyById")]
         public async Task<IActionResult> GetCompany(int id)
         {
@@ -62,6 +63,7 @@ namespace MovieApp.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpGet("[action]")]
         public async Task <IActionResult> GetCompanyPerson()
         {
@@ -78,8 +80,8 @@ namespace MovieApp.Controllers
 
 
 
-
-       [HttpPost]
+        [Authorize(UserRole.Admin)]
+        [HttpPost]
         public async Task <IActionResult> CreateCompany(CompanyCreateRequest request)
         {
             try
@@ -100,6 +102,7 @@ namespace MovieApp.Controllers
             }
         }
 
+        [Authorize(UserRole.Admin)]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, CompanyUpdateRequest request)
         {
@@ -132,7 +135,7 @@ namespace MovieApp.Controllers
             }
         }
 
-
+        [Authorize(UserRole.Admin)]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCompany(int id)
         {
