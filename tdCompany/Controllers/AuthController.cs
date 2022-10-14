@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MovieApp.Entities;
-using MovieApp.Message.Auth;
 using MovieApp.Message.Response;
 using tdCompany.Dto;
+using tdCompany.Message.Request;
 
 namespace MovieApp.Controllers
 {

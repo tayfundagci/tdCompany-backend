@@ -1,7 +1,7 @@
 ﻿using MovieApp.Entities;
 using System.ComponentModel.DataAnnotations;
 
-namespace MovieApp.Message.Auth
+namespace tdCompany.Message.Request
 {
     public class LoginRequest
     {
@@ -12,5 +12,4 @@ namespace MovieApp.Message.Auth
 
     }
 
-   
 }
