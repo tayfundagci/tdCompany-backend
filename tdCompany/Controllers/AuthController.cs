@@ -26,7 +26,7 @@ namespace MovieApp.Controllers
             try
             {
                 var getUser = await _userRepository.GetById(id);
-                return Ok(getUser);
+                return Ok(getUser.Role);
             }
             catch (Exception ex)
             {
@@ -48,6 +48,8 @@ namespace MovieApp.Controllers
                     var token = _jwtService.GenerateToken(user);
                     response.Code = 200;
                     response.Token = token;
+                    response.Username = user.Username;
+                    response.Role = user.Role;
                     response.Message = "Success";
                     return Ok(response);
                 }

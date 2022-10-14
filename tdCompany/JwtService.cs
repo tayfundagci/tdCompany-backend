@@ -23,7 +23,7 @@ namespace MovieApp
             {
                 Subject = new ClaimsIdentity(new[] {
                     new Claim("id",user.Id.ToString()),
-                    new Claim("username",user.Username.ToString())
+                    new Claim("username",user.Username.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

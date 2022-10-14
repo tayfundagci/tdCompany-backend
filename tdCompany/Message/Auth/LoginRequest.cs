@@ -9,6 +9,7 @@ namespace MovieApp.Message.Auth
         public string Username { get; set; }
         [Required]
         public string Password { get; set; }
+
     }
 
    
