@@ -3,6 +3,7 @@ using MovieApp.Dto;
 using MovieApp.Entities;
 using MovieApp.Message.Request;
 using tdCompany.Entities;
+using tdCompany.Interfaces;
 
 namespace MovieApp.Controllers
 {

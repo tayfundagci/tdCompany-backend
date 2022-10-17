@@ -1,9 +1,9 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
-using MovieApp;
 using MovieApp.Context;
 using MovieApp.Dto;
 using MovieApp.Entities;
+using tdCompany.Interfaces;
 
 namespace tdCompany.Repository
 {

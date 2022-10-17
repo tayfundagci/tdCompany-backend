@@ -2,7 +2,7 @@
 using MovieApp.Entities;
 using MovieApp.Message.Request;
 
-namespace MovieApp
+namespace tdCompany.Interfaces
 {
     public interface ICompanyRepository
     {

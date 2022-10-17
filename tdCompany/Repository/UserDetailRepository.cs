@@ -5,6 +5,7 @@ using MovieApp.Entities;
 using MovieApp.Message.Request;
 using System.Data;
 using tdCompany.Entities;
+using tdCompany.Interfaces;
 
 namespace MovieApp.Repository
 {

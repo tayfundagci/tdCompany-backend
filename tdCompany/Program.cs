@@ -1,6 +1,7 @@
 using MovieApp;
 using MovieApp.Context;
 using MovieApp.Repository;
+using tdCompany.Interfaces;
 using tdCompany.Repository;
 
 var builder = WebApplication.CreateBuilder(args);

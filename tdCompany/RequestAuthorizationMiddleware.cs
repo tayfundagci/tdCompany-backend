@@ -1,4 +1,6 @@
-﻿namespace MovieApp
+﻿using tdCompany.Interfaces;
+
+namespace MovieApp
 {
     public class RequestAuthorizationMiddleware
     {

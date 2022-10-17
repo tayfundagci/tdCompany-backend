@@ -4,7 +4,7 @@ using MovieApp.Message.Request;
 using tdCompany.Dto;
 using tdCompany.Entities;
 
-namespace MovieApp
+namespace tdCompany.Interfaces
 {
     public interface IUserDetailRepository
     {

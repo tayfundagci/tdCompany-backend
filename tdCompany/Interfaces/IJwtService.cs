@@ -1,6 +1,6 @@
 ﻿using MovieApp.Entities;
 
-namespace MovieApp
+namespace tdCompany.Interfaces
 {
     public interface IJwtService
     {

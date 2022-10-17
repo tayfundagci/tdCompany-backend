@@ -2,6 +2,7 @@
 using MovieApp.Entities;
 using MovieApp.Message.Response;
 using tdCompany.Dto;
+using tdCompany.Interfaces;
 using tdCompany.Message.Request;
 
 namespace MovieApp.Controllers
