@@ -50,6 +50,7 @@ namespace MovieApp.Controllers
                     response.Token = token;
                     response.Username = user.Username;
                     response.Role = user.Role;
+                    response.Id = user.Id;
                     response.Message = "Success";
                     return Ok(response);
                 }
