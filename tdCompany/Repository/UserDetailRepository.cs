@@ -63,5 +63,34 @@ namespace MovieApp.Repository
             }
         }
 
+        public async Task<UserDetail> UpdateUserDetail(UserDetailUpdateRequest request)
+        {
+            var query = "UPDATE UserDetail SET Name = @Name, Surname = @Surname, Address = @Address, Phone = @Phone WHERE UserDetailId = @UserDetailId";
+
+            var parameters = new DynamicParameters();
+            parameters.Add("Id", request.Id, DbType.Int32);
+            parameters.Add("Name", request.Name, DbType.String);
+            parameters.Add("Surname", request.Surname, DbType.String);
+            parameters.Add("Address", request.Address, DbType.String);
+            parameters.Add("Phone", request.Phone, DbType.String);
+            parameters.Add("UserDetailId", request.UserDetailId, DbType.Guid);
+
+            using (var connection = _context.CreateConnection())
+            {
+                await connection.ExecuteAsync(query, parameters);
+                return new UserDetail() 
+                { 
+                    Id = request.Id.Value, 
+                    Name = request.Name, 
+                    Surname = request.Surname, 
+                    Address = request.Address,   
+                    Phone= request.Phone,
+                    UserDetailId = request.UserDetailId
+                };
+            }
+
+
+        }
+
     }
 }

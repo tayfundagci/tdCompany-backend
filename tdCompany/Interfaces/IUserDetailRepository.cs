@@ -10,5 +10,7 @@ namespace tdCompany.Interfaces
     {
         public Task<UserDetail> GetUserDetail(Guid UserDetailId);
         public Task<UserDetail> CreateUserDetail(UserDetailForCreationDto UserDetail);
+        public Task<UserDetail> UpdateUserDetail(UserDetailUpdateRequest request);
+
     }
 }

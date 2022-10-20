@@ -38,7 +38,7 @@ namespace MovieApp.Controllers
 
                 return Ok(response);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(500, ex.Message);
             }
@@ -66,5 +66,37 @@ namespace MovieApp.Controllers
             }
         }
 
+        [HttpPut("{userDetailId}")]
+        public async Task<IActionResult> UpdateUserDetail(Guid UserDetailId, UserDetailUpdateRequest request)
+        {
+
+            try
+            {
+                var dbUserDetail = await _userDetailRepo.GetUserDetail(UserDetailId);
+                if (dbUserDetail == null)
+                    return NotFound();
+                else
+                {
+                    request.UserDetailId = UserDetailId;
+                    var result = await _userDetailRepo.UpdateUserDetail(request);
+                    var response = new Message.Response.UserDetailUpdateResponse()
+                    {
+                        Code = 200,
+                        Message = "User Detail updated",
+                        UserDetail = new UserDetailDto(result)
+                    };
+
+                    return Ok(response);
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+
+        }
     }
 }
